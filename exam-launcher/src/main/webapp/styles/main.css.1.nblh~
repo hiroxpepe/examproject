@@ -1,0 +1,267 @@
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+/*****************************************************************************/
+/**
+ * be initialized.
+ */
+* {
+	margin: 0;
+	padding: 0;
+}
+input {
+    width: 100%;
+    font-size: 100%;
+}
+textarea {
+    width: 100%;
+    height: 10em;
+    resize: vertical;
+    font-size: 100%;
+}
+body, div {
+    font: 100% arial, helvetica, clean, sans-serif;
+} 
+select, input, button, textarea {
+    font: 90% arial, helvetica, clean, sans-serif;
+}
+
+/*****************************************************************************/
+/**
+ * set the body of this application.
+ * this will set the background color of this site.
+ */
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: mintcream;
+}
+
+/*****************************************************************************/
+/**
+ * set the container area of this application.
+ * this represents part of the rectangle to display the contents of site.
+ * here, there is never set a height param.
+ */
+#container {
+    width: 763px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lavender;
+    border-left: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+    #container.wide {
+        width: 950px;
+    }
+
+/*****************************************************************************/
+/**
+ * set the header area of this application.
+ * this part is setting of the appearance and layout
+ * structure of the constituent regions for this site.
+ */
+#header {
+    width: 100%;
+    height: 8em;
+    text-align: left;
+    color: white;
+    background: lightslategray;
+}
+
+/*****************************************************************************/
+/**
+ * set the menu area of this application.
+ */
+#menu {
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    background: dimgray;
+}
+    #menu a {
+        color: white;
+        text-decoration: none;
+    }
+    #menu a:active {
+        color: white;
+        text-decoration: none;
+    }
+    #menu a:visited {
+        text-decoration: none;
+        color: white;
+    }
+
+/*****************************************************************************/
+/**
+ * set the content area of this application.
+ */
+#content {
+    width: 75%;
+    min-height: 720px;
+    height: auto;
+    float: left;
+    text-align: left;
+    background-color: white;
+}
+
+/*****************************************************************************/
+/**
+ * set the sidebar area of this application.
+ */
+#sidebar {
+    width: 25%;
+    min-height: 720px;
+    height: auto;
+    float: right;
+    text-align: left;
+    background-color: lavender;
+}
+
+/*****************************************************************************/
+/**
+ * set the footer area of this application.
+ */
+#footer {
+    width: 100%;
+    height: 6em;
+    clear: both;
+    text-align: right;
+    font-size: 90%;
+    color: white;
+    background: lightslategray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+    #footer a {
+        color: white;
+        text-decoration: none;
+    }
+    #footer a:active {
+        color: white;
+        text-decoration: none;
+    }
+    #footer a:visited {
+        text-decoration: none;
+        color: white;
+    }
+
+/*****************************************************************************/
+/**
+ * set the div block class of this application.
+ */
+div.block {
+    padding: 0.25em;
+}
+
+/*****************************************************************************/
+/**
+ * set the appearance of the sidebar content.
+ */
+#sidebar_content a {
+    margin-top: 7pt;
+    margin-right: 0pt;
+    margin-bottom: 7pt;
+    margin-left: 0pt;
+    padding-top: 2pt;
+    padding-right: 2pt;
+    padding-bottom: 2pt;
+    padding-left: 2pt;
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: lightslategray;
+    border: 1px solid #aaaaaa;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+    #sidebar_content a:hover {
+        color: white;
+        background: darkgray;
+        border: 1px solid #d2b48c;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+    #sidebar_content p {
+        background-color: transparent;
+        border-width: 1px 0px 1px 0px;
+        border-style: solid solid solid solid;
+        border-color: #00008b transparent #00008b transparent;
+    }
+
+/*****************************************************************************/
+/**
+ * set the appearance of a command button.
+ */
+input.command_button {
+    width: 90px;
+    height: 25px;
+    cursor: pointer;
+    color: white;    
+    background: lightslategray;
+    border: 1px solid #aaaaaa;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+    input.command_button:hover {
+        color: white;
+        background: darkgray;
+        border: 1px solid #d2b48c;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+
+/* *********************************************************************************** */
+/* Additional configuration
+/* *********************************************************************************** */
+
+div.menu_bar {
+    margin-left: 0.5em;
+}
+
+h1.header_title  {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+h1.content_title {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+table.person_search_table {
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+	font-size: 90%;
+    border-collapse: collapse;
+}
+    table.person_search_table th {
+        padding: 0.25em;
+        color: white;    
+        background: lightslategray;
+        border-style: solid;
+        border-color: lightslategray;
+        border-width: 1px;
+    }
+    table.person_search_table td {
+        padding: 0.25em;
+        border-style: solid;
+        border-color: lightslategray;
+        border-width: 1px;
+    }
+
+table.person_form_table {
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+	font-size: 90%;
+    border-collapse: collapse;
+}
+    table.person_form_table td {
+        padding: 0.25em;
+    }

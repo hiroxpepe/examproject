@@ -1,0 +1,269 @@
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+/*****************************************************************************/
+/**
+ * be initialized.
+ */
+* {
+	margin: 0;
+	padding: 0;
+}
+input {
+    width: 100%;
+    font-size: 100%;
+}
+textarea {
+    width: 100%;
+    height: 10em;
+    resize: vertical;
+    font-size: 100%;
+}
+body, div {
+    font: 100% arial, helvetica, clean, sans-serif;
+} 
+select, input, button, textarea {
+    font: 90% arial, helvetica, clean, sans-serif;
+}
+
+/*****************************************************************************/
+/**
+ * set the body of this application.
+ * this will set the background color of this site.
+ */
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: mintcream;
+}
+
+/*****************************************************************************/
+/**
+ * set the container area of this application.
+ * this represents part of the rectangle to display the contents of site.
+ * here, there is never set a height param.
+ */
+#container {
+    width: 763px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lavender;
+    border-left: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+}
+#container.wide {
+    width: 950px;
+}
+
+/*****************************************************************************/
+/**
+ * set the header area of this application.
+ * this part is setting of the appearance and layout
+ * structure of the constituent regions for this site.
+ */
+#header {
+    width: 100%;
+    height: 8em;
+    text-align: left;
+    color: white;
+    background: lightslategray;
+}
+
+/*****************************************************************************/
+/**
+ * set the menu area of this application.
+ */
+#menu {
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    background: dimgray;
+}
+    #menu a:visited {
+        text-decoration: none;
+        color: white;
+    }
+
+/*****************************************************************************/
+/**
+ * set the content area of this application.
+ */
+#content {
+    width: 75%;
+    min-height: 720px;
+    height: auto;
+    float: left;
+    text-align: left;
+    background-color: white;
+}
+
+/*****************************************************************************/
+/**
+ * set the sidebar area of this application.
+ */
+#sidebar {
+    width: 25%;
+    min-height: 720px;
+    height: auto;
+    float: right;
+    text-align: left;
+    background-color: lavender;
+}
+
+/*****************************************************************************/
+/**
+ * set the footer area of this application.
+ */
+#footer {
+    width: 100%;
+    height: 6em;
+    clear: both;
+    text-decoration: none;
+    text-align: right;
+    font-size: 90%;
+    color: white;
+    background: lightslategray;
+}
+    #footer a:visited {
+        text-decoration: none;
+        color: white;
+    }
+
+/*****************************************************************************/
+/**
+ * set the div block class of this application.
+ */
+div.block {
+    padding: 0.25em;
+}
+
+/* ************************************************************************* */
+
+/*****************************************************************************/
+/**
+ * set the appearance of the sidebar content.
+ */
+#sidebar_content a {
+    margin-top: 7pt;
+    margin-right: 0pt;
+    margin-bottom: 7pt;
+    margin-left: 0pt;
+    padding-top: 2pt;
+    padding-right: 2pt;
+    padding-bottom: 2pt;
+    padding-left: 2pt;
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: lightslategray;
+    border: 1px solid #aaaaaa;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#sidebar_content a:hover {
+    color: white;
+    background: darkgray;
+    border: 1px solid #d2b48c;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#sidebar_content p {
+  	background-color: transparent;
+	border-width: 1px 0px 1px 0px;
+	border-style: solid solid solid solid;
+	border-color: #00008b transparent #00008b transparent;
+}
+
+/* *********************************************************************************** */
+
+/* *********************************************************************************** */
+
+table.search {
+	margin: 1em 1ex 2em 1ex;
+	font-size: 91%;
+	border-width: 1px 1px 1px 1px;
+	border-spacing: 0px;
+	border-style: solid solid solid solid;
+	border-color: black black black black;
+	border-collapse: separate;
+	background-color: white;
+}
+
+table.search th {
+	border-width: 1px 1px 1px 1px;
+	padding: 1px 1px 1px 1px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	background-color: white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+table.search td {
+	border-width: 1px 1px 1px 1px;
+	padding: 1px 1px 1px 1px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	background-color: white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+/* *********************************************************************************** */
+
+fieldset {
+    float: left;
+    margin: 1em 1ex 2em 1ex;
+    padding: 1em 1ex 2em 1ex;
+}
+
+/* *********************************************************************************** */
+
+div.form-row {
+    clear: both;
+    padding-top: 10px;
+}
+
+div.form-row label {
+    float: left;
+    width: 100px;
+    text-align: right;
+    padding: 0ex 0.5ex 0ex 0ex;
+}
+
+div.form-row input {
+    float: left;
+    text-align: left;
+    padding: 0ex 0ex 0ex 0ex;
+}
+
+div.form-buttons {
+    clear: both;
+    padding-top: 10px;
+    align: left;
+}
+
+div.form-buttons div.button {
+    float: right;
+}
+
+/* CrudÉ{É^Éì */
+input.submit_button {
+    width: 90px;
+    height: 25px;
+    border: none;
+    cursor: pointer;
+/*    color: #ffffff;*/
+/*    background: url('pict/button/buttoncrudback.gif') no-repeat left top;*/
+    /*ï∂éöêF*/
+    color: white;
+    /*îwåiêF*/
+    background: #000099;
+    background: -moz-linear-gradient(top, #000099, #000066);
+    background: -webkit-gradient(linear,left top, left bottom, from(#000099), to(#000066));
+    border-width: 1px;
+	border-style: solid;
+    border-color: #aaaaaa;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- here you can add a set of user libraries. -->
+    
+    <!-- ///////////////////////////////////////////////////////////////////////////// -->
+    <!-- a service object -->
+    
+    <bean id="personService" class="com.hiroxpepe.service.SimplePersonService">
+        <constructor-arg name="idToPersonTransformer" ref="idToPersonTransformer" />
+        <constructor-arg name="personsFactory" ref="personsFactory" />
+        <constructor-arg name="savePersonClosure" ref="savePersonClosure" />
+        <constructor-arg name="deletePersonClosure" ref="deletePersonClosure" />
+    </bean>
+
+    <!-- ///////////////////////////////////////////////////////////////////////////// -->
+    <!-- some strategy objects for the service object. -->
+    
+    <bean id="savePersonClosure" class="com.hiroxpepe.functor.SavePersonClosure" />
+    
+    <bean id="deletePersonClosure" class="com.hiroxpepe.functor.DeletePersonClosure" />
+    
+    <bean id="personsFactory" class="com.hiroxpepe.functor.PersonsFactory" />
+        
+    <bean id="idToPersonTransformer" class="com.hiroxpepe.functor.IdToPersonTransformer" />
+ 
+</beans>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+ "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+ "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+    <!-- ============================================================================= -->
+    <!-- define the structure of the main-template, which is divided into each region. -->
+    <!-- ============================================================================= -->
+
+	<!-- default main template -->
+	<definition name="main-template" template="/WEB-INF/templates/main.jsp">
+        <put-attribute name="menu" value="/WEB-INF/templates/menu.jsp" />
+		<put-attribute name="header" value="/WEB-INF/templates/header.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/templates/sidebar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/templates/blank.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/templates/footer.jsp" />
+	</definition>
+
+    <!-- ============================================================================= -->
+    <!-- replace the contents of the area by the request URL                           -->
+    <!-- ============================================================================= -->
+
+    <!-- contents of the "content" you access http://[your domain]/index.html -->
+    <definition name="index" extends="main-template">
+        <put-attribute name="content" value="/WEB-INF/views/index.jsp" />
+    </definition>
+    
+    <!-- contents of the "content" you access http://[your domain]/error.html -->
+    <definition name="error" extends="main-template">
+        <put-attribute name="content" value="/WEB-INF/views/error.jsp" />
+    </definition>
+
+    <!-- contents of the "content" you access http://[your domain]/person/form.html -->
+    <definition name="person/form" extends="main-template">
+        <put-attribute name="content" value="/WEB-INF/views/person/form.jsp" />
+    </definition>
+
+    <!-- contents of the "content" you access http://[your domain]/person/search.html -->
+    <definition name="person/search" extends="main-template">
+        <put-attribute name="content" value="/WEB-INF/views/person/search.jsp" />
+    </definition>
+
+</tiles-definitions>

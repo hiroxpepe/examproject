@@ -1,5 +1,6 @@
 package com.hiroxpepe.dto
 
+import java.lang.Long
 import java.util.Date
 
 import scala.reflect.BeanProperty
@@ -9,7 +10,7 @@ import scala.reflect.BeanProperty
  */
 trait PersonDto {
     
-    @BeanProperty var id: java.lang.Long = _
+    @BeanProperty var id: Long = _
     
     @BeanProperty var created: Date = _
 

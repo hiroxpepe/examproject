@@ -1,7 +1,5 @@
 package com.hiroxpepe.dto
 
-import java.util.Date
-
 import org.springframework.context.annotation.Scope
 import org.springframework.stereotype.Component
 

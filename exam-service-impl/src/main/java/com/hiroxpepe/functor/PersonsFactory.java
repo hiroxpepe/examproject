@@ -28,7 +28,7 @@ public class PersonsFactory implements Factory {
     private final Mapper mapper = null;
     
     @Inject
-    protected final PersonRepository repository = null;
+    private final PersonRepository repository = null;
 
     private PersonsFactory() {
     }
@@ -52,13 +52,10 @@ public class PersonsFactory implements Factory {
         // get the entities list from repository.
         List<Person> list = repository.findAll();
         for (Person person : list) {
-            LOG.debug("person id = " + person.getId());
             
             // object mapping by dozer.
             PersonDto dto = context.getBean(PersonDto.class);
-            mapper.map(person, dto);
-            
-            LOG.debug("personDto id = " + dto.getId());       
+            mapper.map(person, dto);     
             
             // add to dto list.
             dtoList.add(dto);

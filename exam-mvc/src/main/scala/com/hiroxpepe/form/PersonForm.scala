@@ -1,5 +1,6 @@
 package com.hiroxpepe.form
 
+import java.lang.Long
 import java.util.Date
 
 import org.springframework.context.annotation.Scope;
@@ -15,7 +16,7 @@ import scala.reflect.BeanProperty
 class PersonForm {
 
     @BeanProperty
-    var id: java.lang.Long = _
+    var id: Long = _
 
     @BeanProperty
     var createdDate: Date = _

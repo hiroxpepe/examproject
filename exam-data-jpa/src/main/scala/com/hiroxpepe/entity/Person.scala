@@ -1,5 +1,6 @@
 package com.hiroxpepe.entity
 
+import java.lang.Long
 import java.io.Serializable
 import java.util.Date
 import javax.persistence.Column
@@ -22,13 +23,13 @@ import scala.reflect.BeanProperty
 @Component
 class Person extends Serializable {
     
-    val serialVersionUID: java.lang.Long = -8712872385957386182L
+    val serialVersionUID: Long = -8712872385957386182L
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(unique = true)
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(unique=true)
     @BeanProperty
-    var id: java.lang.Long = _
+    var id: Long = _
 
     @Column(name="created")
     @Temporal(javax.persistence.TemporalType.DATE)

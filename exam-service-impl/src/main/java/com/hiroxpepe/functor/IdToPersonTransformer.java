@@ -26,7 +26,7 @@ public class IdToPersonTransformer implements Transformer {
     private final Mapper mapper = null;
     
     @Inject
-    protected final PersonRepository repository = null;
+    private final PersonRepository repository = null;
 
     private IdToPersonTransformer() {
     }
@@ -43,9 +43,9 @@ public class IdToPersonTransformer implements Transformer {
     }
 
     private PersonDto getPersonDto(Object o) {
-        // TODO: why null?
-        if (o != null) {
-            
+        
+        // if ID is offered, find the entity from repository, and mapping to dto.
+        if (o != null) {        
             // get the entity from repository.
             Long id = Long.valueOf(o.toString());
             Person person = (Person) repository.findOne(id);
@@ -56,6 +56,8 @@ public class IdToPersonTransformer implements Transformer {
               
             // return a mapped dto.
             return dto;
+            
+        // if the new request, a null ID will be provided.
         } else {
             // return a new dto.
             return context.getBean(PersonDto.class);

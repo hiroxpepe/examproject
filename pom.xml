@@ -14,12 +14,12 @@
     </properties>
     
     <modules>
-      <module>exam-launcher</module>
-      <module>exam-mvc</module>
-      <module>exam-service</module>
-      <module>exam-service-impl</module>
-      <module>exam-domain</module>
-      <module>exam-data-jpa</module>
+        <module>exam-launcher</module>
+        <module>exam-mvc</module>
+        <module>exam-service</module>
+        <module>exam-service-impl</module>
+        <module>exam-domain</module>
+        <module>exam-data-jpa</module>
     </modules>
     
     <build>

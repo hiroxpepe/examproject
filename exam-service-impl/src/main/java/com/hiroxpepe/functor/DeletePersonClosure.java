@@ -18,7 +18,7 @@ public class DeletePersonClosure  implements Closure {
     private static final Logger LOG = LoggerFactory.getLogger(DeletePersonClosure.class);
     
     @Inject
-    protected final PersonRepository repository = null;
+    private final PersonRepository repository = null;
 
     private DeletePersonClosure() {
     }

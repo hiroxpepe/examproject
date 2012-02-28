@@ -27,14 +27,14 @@ public class SavePersonClosure implements Closure {
     private final Mapper mapper = null;
     
     @Inject
-    protected final PersonRepository repository = null;
+    private final PersonRepository repository = null;
 
     private SavePersonClosure() {
     }
     
     @Override
     public void execute(Object o) {
-        LOG.debug("called execute.");
+        LOG.debug("called.");
         PersonDto personDto = (PersonDto) o;
         try {
             save(personDto);
@@ -50,25 +50,22 @@ public class SavePersonClosure implements Closure {
         // if dto is new one, create a new date.
         if (personDto.getCreated() == null) {
             personDto.setCreated(new Date());
-            LOG.debug("set paesonDto new Date.");
+            LOG.debug("set personDto new Date.");
         }
         
         // object mapping by dozer.
         Person person = context.getBean(Person.class);
-        LOG.debug("get paeson from context.");
-        
         mapper.map(personDto, person);
-        LOG.debug("mapping personDyo to paeson.");
 
         // push the entity to repository.
         try {
             repository.save(person);
-            LOG.debug("save a paeson.");
+            LOG.debug("save a person.");
         } catch (Exception e) {
-            throw new RuntimeException("save failed. ", e);
+            throw new RuntimeException("failed save a person.", e);
         }
         
-        // if dto is new one, set the id.
+        // if dto is new one, set the entity's ID.
         if (personDto.getId() == null) {
             personDto.setId(person.getId());
         }

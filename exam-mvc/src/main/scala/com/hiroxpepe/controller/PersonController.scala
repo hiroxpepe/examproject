@@ -1,5 +1,6 @@
 package com.hiroxpepe.controller
 
+import java.lang.Long
 import java.util.ArrayList
 import java.util.List
 import javax.inject.Inject
@@ -50,13 +51,14 @@ class PersonController {
     ///////////////////////////////////////////////////////////////////////////
     // public methods
     
+    ///////////////////////////////////////////////////////////////////////////
     /**
      * for every request for this controller, this will 
      * create a person instance for the form.
      */
     @ModelAttribute
     def createForm(
-        @RequestParam(required=false) id: java.lang.Long 
+        @RequestParam(required=false) id: Long 
     )
     : PersonForm = {
         LOG.debug("you get a form object from service object.")
@@ -72,7 +74,6 @@ class PersonController {
     }
 
     ///////////////////////////////////////////////////////////////////////////
-    
     /**
      * person form request.
      * expected HTTP GET and request '/person/form'.
@@ -85,6 +86,7 @@ class PersonController {
         LOG.debug("request '/person/form' via GET.")
     }
     
+    ///////////////////////////////////////////////////////////////////////////
     /**
      * saves a person.
      * expected HTTP POST and request '/person/form'.
@@ -113,6 +115,7 @@ class PersonController {
         )
     }
 
+    ///////////////////////////////////////////////////////////////////////////
     /**
      * deletes a person.
      * expected HTTP POST and request '/person/delete'.
@@ -135,6 +138,7 @@ class PersonController {
         return SEARCH_VIEW_KEY
     }
 
+    ///////////////////////////////////////////////////////////////////////////
     /**
      * searches for all persons and returns them in a List.
      * expected HTTP GET and request '/person/search'.
@@ -158,6 +162,10 @@ class PersonController {
         return personFormList;
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    /**
+     * if a error is occured, this method will be called.
+     */
     @ExceptionHandler
     def handleException(
         e: Exception
@@ -166,12 +174,16 @@ class PersonController {
         return ERROR_VIEW_KEY;
     }
     
+    ///////////////////////////////////////////////////////////////////////////
+    /**
+     * move to the view for a error.
+     */
     @RequestMapping(
         value=Array("/error"),
         method=Array(RequestMethod.GET)
     )
     def onError() = {
-        LOG.debug("request '/error'")
+        LOG.error("request '/error'")
         // TODO: do something...
     }
 }

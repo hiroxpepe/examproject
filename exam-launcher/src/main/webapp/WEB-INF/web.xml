@@ -7,13 +7,24 @@
     
     <display-name>exam-launcher</display-name>
     
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/spring/app-config.xml
+            /WEB-INF/spring/secure-config.xml
+        </param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
-            <!-- the Spring configuration file will be loaded. -->
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/spring/app-config.xml</param-value>
+            <param-value>/WEB-INF/spring/mvc-config.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -23,6 +34,7 @@
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
     
+    <!-- UTF-8 Encoding -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -37,6 +49,21 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     
+    <!-- Secures the application -->
+    <filter>
+        <filter-name>securityFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetBeanName</param-name>
+            <param-value>springSecurityFilterChain</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>securityFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+        
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>

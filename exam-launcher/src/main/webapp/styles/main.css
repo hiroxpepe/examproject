@@ -190,7 +190,7 @@ div.block {
         background-color: transparent;
         border-width: 1px 0px 1px 0px;
         border-style: solid solid solid solid;
-        border-color: #00008b transparent #00008b transparent;
+        border-color: darkgray transparent darkgray transparent;
     }
 
 /*****************************************************************************/
@@ -239,7 +239,6 @@ p.content_message {
 }
 
 p.status_message {
-    margin-left: 1em;
     font-size: 110%;
     font-weight: bold;
     color: green;
@@ -250,6 +249,12 @@ p.error_message {
     font-size: 140%;
     font-weight: bold;
     color: red;
+}
+
+p.login_description {
+    margin-top: 1em;
+    font-size: 80%;
+    color: silver;
 }
 
 table.person_search_table {

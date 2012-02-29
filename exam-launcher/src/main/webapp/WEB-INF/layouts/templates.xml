@@ -31,6 +31,21 @@
         <put-attribute name="content" value="/WEB-INF/views/error.jsp" />
     </definition>
 
+    <!-- contents of the "content" you access http://[your domain]/login.html -->
+    <definition name="login" extends="main-template">
+        <put-attribute name="content" value="/WEB-INF/views/login.jsp" />
+    </definition>
+    
+    <!-- contents of the "content" you access http://[your domain]/logout.html -->
+    <definition name="logout" extends="main-template">
+        <put-attribute name="content" value="/WEB-INF/views/logout.jsp" />
+    </definition>
+    
+    <!-- contents of the "content" you access http://[your domain]/deny.html -->
+    <definition name="deny" extends="main-template">
+        <put-attribute name="content" value="/WEB-INF/views/deny.jsp" />
+    </definition>
+
     <!-- contents of the "content" you access http://[your domain]/person/form.html -->
     <definition name="person/form" extends="main-template">
         <put-attribute name="content" value="/WEB-INF/views/person/form.jsp" />

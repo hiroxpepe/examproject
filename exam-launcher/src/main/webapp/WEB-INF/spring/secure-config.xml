@@ -1,0 +1,30 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:security="http://www.springframework.org/schema/security" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <http access-denied-page="/deny.html" use-expressions="true">
+        <form-login login-page="/login.html" authentication-failure-url="/deny.html"/>
+        <logout logout-url="/logout.html" delete-cookies="JSESSIONID" />
+        <intercept-url pattern="/index.html" access="permitAll" />
+        <intercept-url pattern="/login.html" access="permitAll" />
+        <intercept-url pattern="/error.html" access="permitAll" />
+        <intercept-url pattern="/deny.html" access="permitAll" />
+        <intercept-url pattern="/person/form.html" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/person/search.html" access="hasRole('ROLE_USER')" />
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="admin" authorities="ROLE_ADMIN, ROLE_USER" />
+                <user name="user" password="user" authorities="ROLE_USER" />
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>

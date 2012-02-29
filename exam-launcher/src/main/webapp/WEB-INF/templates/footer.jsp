@@ -3,7 +3,7 @@
 
 <div class="block">
     <div>
-        <fmt:message key="button.locale" />:
+        <fmt:message key="label.locale" />:
         <c:url var="englishLocaleUrl" value="/index.html">
             <c:param name="locale" value="" />
         </c:url>
@@ -18,6 +18,6 @@
         <a href='<c:out value="${koreanLocaleUrl}" />'><fmt:message key="locale.korean" /></a>
     </div>
     <div>
-        <fmt:message key="site.footer" />
+        <fmt:message key="site.footer.author" /> <fmt:message key="site.footer.copyright" />
     </div>
 </div>

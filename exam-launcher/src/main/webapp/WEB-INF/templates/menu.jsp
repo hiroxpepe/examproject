@@ -3,6 +3,8 @@
 
 <div class="block">
     <div class="menu_bar">
-        <a href="<c:url value="/" />"><fmt:message key="index.title" /></a>
+        <a href="<c:url value="/" />"><fmt:message key="link.home" /></a>
+        <a href="<c:url value="/login.html" />"><fmt:message key="link.login" /></a>
+        <a href="<c:url value="/logout.html" />"><fmt:message key="link.logout" /></a>
     </div>
 </div>

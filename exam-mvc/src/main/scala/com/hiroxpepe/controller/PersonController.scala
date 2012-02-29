@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory
 import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
-import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -25,7 +24,7 @@ import scala.collection.JavaConversions._
 
 /**
  * This controller class exposes the following URLs:
- * jetty:run
+ * mvn jetty:run
  * http://localhost:8080/
  *
  * @author hiroxpepe
@@ -37,7 +36,7 @@ class PersonController {
 
     private val SEARCH_VIEW_KEY: String = "redirect:search.html"
     
-    private val ERROR_VIEW_KEY: String = "error"
+    private val MESSAGE_SUCCESS_RESOURCE_KEY: String = "person.form.msg.success"
     
     @Inject
     private val context: ApplicationContext = null
@@ -111,7 +110,7 @@ class PersonController {
         // add a message to model object, with message key.
         model.addAttribute(
             "statusMessageKey",
-            "person.form.msg.success"
+            MESSAGE_SUCCESS_RESOURCE_KEY
         )
     }
 
@@ -162,28 +161,4 @@ class PersonController {
         return personFormList;
     }
 
-    ///////////////////////////////////////////////////////////////////////////
-    /**
-     * if a error is occured, this method will be called.
-     */
-    @ExceptionHandler
-    def handleException(
-        e: Exception
-    )
-    : String = {
-        return ERROR_VIEW_KEY;
-    }
-    
-    ///////////////////////////////////////////////////////////////////////////
-    /**
-     * move to the view for a error.
-     */
-    @RequestMapping(
-        value=Array("/error"),
-        method=Array(RequestMethod.GET)
-    )
-    def onError() = {
-        LOG.error("request '/error'")
-        // TODO: do something...
-    }
 }

@@ -5,20 +5,25 @@
 <div class="block">
     <h1 class="content_title"><fmt:message key="person.form.title" /></h1>
 
-    <!-- if there is a message to display. -->
-    <c:if test="${not empty statusMessageKey}">
-        <p class="status_message"><fmt:message key="${statusMessageKey}" /></p>
-    </c:if>
-
     <!-- create url -->
     <c:url var="url" value="/person/form.html" />
 
     <form:form action="${url}" commandName="personForm">
         <form:hidden path="id" />
         <table class="person_form_table">
+            
+            <!-- if there is a message to display. -->
+            <c:if test="${not empty statusMessageKey}">
+                <tr>
+                    <td colspan="2">
+                        <p class="status_message"><fmt:message key="${statusMessageKey}" /></p>
+                    </td>
+                <tr>
+            </c:if>
+            
             <tr>
                 <td>
-                    <label for="firstName"><fmt:message key="person.form.firstName" /></label>
+                    <label for="firstName"><fmt:message key="person.form.label.firstname" /></label>
                 </td>
                 <td>
                     <form:input path="firstName" />
@@ -26,7 +31,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="lastName"><fmt:message key="person.form.lastName" /></label>
+                    <label for="lastName"><fmt:message key="person.form.label.lastname" /></label>
                 </td>
                 <td>
                     <form:input path="lastName" />
@@ -36,7 +41,7 @@
                 <td>
                 </td>
                 <td>
-                    <input class="command_button" name="submit" type="submit" value="<fmt:message key="button.save" />"/>
+                    <input class="command_button" name="submit" type="submit" value="<fmt:message key="button.save" />" />
                 </td>
             </tr>
         </table>

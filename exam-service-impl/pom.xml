@@ -7,7 +7,7 @@
     <groupId>com.hiroxpepe</groupId>
     <artifactId>exam-service-impl</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>exam-service-impl</name>
 
     <properties>
@@ -26,17 +26,17 @@
         <dependency>
             <groupId>com.hiroxpepe</groupId>
             <artifactId>exam-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.hiroxpepe</groupId>
             <artifactId>exam-domain</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.hiroxpepe</groupId>
             <artifactId>exam-data-jpa</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
         
         <!--///////////////////////////////////////////////////////////////////////////-->

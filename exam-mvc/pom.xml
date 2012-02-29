@@ -7,10 +7,11 @@
     <groupId>com.hiroxpepe</groupId>
     <artifactId>exam-mvc</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>exam-mvc</name>
 
     <properties>
+        <exam.version>0.0.3-SNAPSHOT</exam.version>
         <dozer.version>5.3.2</dozer.version>
         <spring.version>3.1.0.RELEASE</spring.version>
         <hibernate.version>3.6.0.Final</hibernate.version>
@@ -29,7 +30,7 @@
         <dependency>
             <groupId>com.hiroxpepe</groupId>
             <artifactId>exam-service</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>${exam.version}</version>
         </dependency>
         
         <!--///////////////////////////////////////////////////////////////////////////-->

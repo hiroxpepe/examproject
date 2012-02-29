@@ -7,10 +7,11 @@
     <groupId>com.hiroxpepe</groupId>
     <artifactId>exam-data-jpa</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>exam-data-jpa</name>
 
     <properties>
+        <exam.version>0.0.3-SNAPSHOT</exam.version>
         <spring.version>3.1.0.RELEASE</spring.version>
         <hibernate.version>3.6.0.Final</hibernate.version>
         <slf4j.version>1.5.10</slf4j.version>
@@ -26,7 +27,7 @@
         <dependency>
             <groupId>com.hiroxpepe</groupId>
             <artifactId>exam-domain</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>${exam.version}</version>
         </dependency>
         
         <!--///////////////////////////////////////////////////////////////////////////-->

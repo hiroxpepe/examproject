@@ -18,6 +18,7 @@ import java.lang.Long
 import java.util.ArrayList
 import java.util.List
 import javax.inject.Inject
+import javax.validation.Valid
 
 import org.dozer.Mapper
 import org.slf4j.Logger
@@ -25,10 +26,12 @@ import org.slf4j.LoggerFactory
 import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
+import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.servlet.mvc.support.RedirectAttributes
 
 import com.hiroxpepe.dto.PersonDto
 import com.hiroxpepe.form.PersonForm
@@ -48,9 +51,11 @@ class PersonController {
     
     private val LOG: Logger = LoggerFactory.getLogger(classOf[PersonController])
 
-    private val SEARCH_VIEW_KEY: String = "redirect:search.html"
+    private val REDIRECT_SEARCH_VIEW_KEY: String = "redirect:search.html"
     
-    private val MESSAGE_SUCCESS_RESOURCE_KEY: String = "person.form.msg.success"
+    private val MESSAGE_SAVE_SUCCESS_RESOURCE_KEY: String = "person.form.msg.save.success"
+    
+    private val MESSAGE_DELETE_SUCCESS_RESOURCE_KEY: String = "person.form.msg.delete.success"
     
     @Inject
     private val context: ApplicationContext = null
@@ -95,7 +100,7 @@ class PersonController {
         value=Array("/person/form"),
         method=Array(RequestMethod.GET)
     )
-    def showFormViaGet() = {
+    def showForm() = {
         LOG.debug("request '/person/form' via GET.")
     }
     
@@ -108,12 +113,20 @@ class PersonController {
         value=Array("/person/form"),
         method=Array(RequestMethod.POST)
     )
-    def showFormViaPost(
-        personForm: PersonForm,
-        model: Model
-    ) = {
+    def save(
+        @Valid personForm: PersonForm,
+        result: BindingResult,
+        attrs: RedirectAttributes
+    )
+    : String = {
         LOG.debug("request '/person/form' via POST.")
         
+        // if an incorrect value, and then return without save.
+        if (result.hasErrors()) {
+            LOG.warn("validation error.")
+			return "person/form"
+		}
+    
         // object mapping [form object] to [dto object] by dozer.
         val personDto: PersonDto = context.getBean(classOf[PersonDto])
         mapper.map(personForm, personDto)
@@ -121,11 +134,13 @@ class PersonController {
         // save a dto object instead of form object.
         personService.savePerson(personDto)
 
-        // add a message to model object, with message key.
-        model.addAttribute(
+        // add a message to redirectAttributes object, with message key.        
+        attrs.addFlashAttribute(
             "statusMessageKey",
-            MESSAGE_SUCCESS_RESOURCE_KEY
-        )
+            MESSAGE_SAVE_SUCCESS_RESOURCE_KEY
+        );
+        
+        return REDIRECT_SEARCH_VIEW_KEY
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -138,7 +153,8 @@ class PersonController {
         method=Array(RequestMethod.POST)
     )
     def delete(
-        personForm: PersonForm 
+        personForm: PersonForm,
+        attrs: RedirectAttributes
     )
     : String = {     
         // object mapping [from object] to [dto object] by dozer.
@@ -148,7 +164,13 @@ class PersonController {
         // delete as a entity
         personService.deletePerson(personDto)
 
-        return SEARCH_VIEW_KEY
+        // add a message to redirectAttributes object, with message key.        
+        attrs.addFlashAttribute(
+            "statusMessageKey",
+            MESSAGE_DELETE_SUCCESS_RESOURCE_KEY
+        );
+        
+        return REDIRECT_SEARCH_VIEW_KEY
     }
 
     ///////////////////////////////////////////////////////////////////////////

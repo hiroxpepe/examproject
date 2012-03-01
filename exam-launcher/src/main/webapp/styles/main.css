@@ -155,6 +155,8 @@ body {
  * set the div block class of this application.
  */
 div.block {
+    margin-right: 1em;
+    margin-left: 1em;
     padding: 0.25em;
 }
 
@@ -187,6 +189,7 @@ div.block {
         -webkit-border-radius: 5px;
     }
     #sidebar_content p {
+        margin-top: 0.25em;
         background-color: transparent;
         border-width: 1px 0px 1px 0px;
         border-style: solid solid solid solid;
@@ -220,17 +223,15 @@ input.command_button {
 /* *********************************************************************************** */
 
 div.menu_bar {
-    margin-left: 1em;
 }
 
 h1.header_title  {
     margin-top: 0.5em;
-    margin-left: 0.5em;
 }
 
 h1.content_title {
     margin-top: 0.5em;
-    margin-left: 0.5em;
+    font-size: 85%;
 }
 
 p.content_message {
@@ -245,10 +246,31 @@ p.status_message {
 }
 
 p.error_message {
-    margin-left: 1em;
     font-size: 140%;
     font-weight: bold;
     color: red;
+}
+
+div.status_block {
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    color: green;
+    background-color: palegreen;
+    border: 2px solid green;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+div.error_block {
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    color: red;
+    background-color: pink;
+    border: 2px solid red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
 p.login_description {

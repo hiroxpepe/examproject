@@ -6,17 +6,25 @@
 <div class="block">
     <h1 class="content_title"><fmt:message key="person.search.title" /></h1>
     
-    <!-- if there is no data -->
+    <!-- if there is no data, display a message. -->
     <c:if test="${empty persons}">
-        <p class="error_message"><fmt:message key="person.search.msg.nodata" /></p>
+        <c:if test="${empty statusMessageKey}">
+            <div class="error_block"><fmt:message key="person.search.msg.nodata" /></div>
+        </c:if>
+    </c:if>
+        
+    <!-- if there is a message to display. -->
+    <c:if test="${not empty statusMessageKey}">
+        <div class="status_block"><fmt:message key="${statusMessageKey}" /></div>
     </c:if>
     
-    <!-- if there is data -->
+    <!-- if there is data, display a table. -->
     <c:if test="${not empty persons}">
         <table class="person_search_table">
             <tr>
                 <th><fmt:message key="person.search.label.firstname" /></th>
                 <th><fmt:message key="person.search.label.lastname" /></th>
+                
                 <!-- if the ROLE_ADMIN authority, will allow the CRUD operation.-->
                 <sec:authorize ifAllGranted="ROLE_ADMIN">
                     <th><fmt:message key="person.search.label.operation" /></th>
@@ -26,12 +34,12 @@
             <!-- creat row -->
             <c:forEach var="person" items="${persons}" varStatus="status">
                 <tr>
-                    <!-- create a url for edit -->
+                    <!-- create an url for edit -->
                     <c:url var="editUrl" value="/person/form.html">
                         <c:param name="id" value="${person.id}" />
                     </c:url>
 
-                    <!-- create a url for delete -->
+                    <!-- create an url for delete -->
                     <c:url var="deleteUrl" value="/person/delete.html" />
 
                     <!-- create an id value for delete -->
@@ -49,11 +57,11 @@
                     <!-- if the ROLE_ADMIN authority, will allow the CRUD operation.-->
                     <sec:authorize ifAllGranted="ROLE_ADMIN">
                         <td>
-                            <!-- for edit link -->
+                            <!-- this is a link for edit -->
                             <a href='<c:out value="${editUrl}" />'>
                                 <fmt:message key="button.edit" />
                             </a>
-                            <!-- for delete link -->
+                            <!-- this is a link for delete -->
                             <a href="javascript:document.forms['${personFormId}'].submit();">
                                 <fmt:message key="button.delete" />
                             </a>

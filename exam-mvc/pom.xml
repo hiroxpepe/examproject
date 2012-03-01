@@ -7,11 +7,11 @@
     <groupId>com.hiroxpepe</groupId>
     <artifactId>exam-mvc</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <name>exam-mvc</name>
 
     <properties>
-        <exam.version>0.0.3-SNAPSHOT</exam.version>
+        <exam.version>0.0.4-SNAPSHOT</exam.version>
         <dozer.version>5.3.2</dozer.version>
         <spring.version>3.1.0.RELEASE</spring.version>
         <hibernate.version>3.6.0.Final</hibernate.version>
@@ -97,6 +97,18 @@
             <scope>test</scope>
         </dependency>                
 
+        <!-- Hibernate Validator -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.2.0.Final</version>
+        </dependency>
+
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -142,6 +154,11 @@
     </dependencies>
 
     <repositories>
+        <!-- for Hibernate Validator -->
+        <repository>
+            <id>JBoss repository</id>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
         <!-- for Scala -->
         <repository>
             <id>scala-tools.org</id>

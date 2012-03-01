@@ -16,6 +16,7 @@ package com.hiroxpepe.form
 
 import java.lang.Long
 import java.util.Date
+import javax.validation.constraints.Size
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -36,9 +37,11 @@ class PersonForm {
     var createdDate: Date = _
 
     @BeanProperty
+    @Size(min=1, max=12)
     var firstName: String = _
 
     @BeanProperty
+    @Size(min=1, max=12)
     var lastName: String = _
     
 }

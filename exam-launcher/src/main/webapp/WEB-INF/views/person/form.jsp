@@ -10,17 +10,12 @@
 
     <form:form action="${url}" commandName="personForm">
         <form:hidden path="id" />
-        <table class="person_form_table">
-            
-            <!-- if there is a message to display. -->
-            <c:if test="${not empty statusMessageKey}">
-                <tr>
-                    <td colspan="2">
-                        <p class="status_message"><fmt:message key="${statusMessageKey}" /></p>
-                    </td>
-                <tr>
-            </c:if>
-            
+
+        <!-- validation error div -->
+        <form:errors path="*" cssClass="error_block" element="div" />
+        
+        <!-- a css naming rule is simply follow the path to jsp files. -->
+        <table class="person_form_table">  
             <tr>
                 <td>
                     <label for="firstName"><fmt:message key="person.form.label.firstname" /></label>

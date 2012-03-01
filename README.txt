@@ -36,7 +36,7 @@ Move to launcher project directory.
 To run the .war application by jetty plugin.
   > mvn jetty:run
 
-You can access to http:localhost:8080/ on your web browser.
+You can access to http://localhost:8080/ on your web browser.
 
 To stop the application hit ctrl + c
 

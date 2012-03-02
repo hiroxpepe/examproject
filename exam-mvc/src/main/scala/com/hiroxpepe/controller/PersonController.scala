@@ -124,8 +124,8 @@ class PersonController {
         // if an incorrect value, and then return without save.
         if (result.hasErrors()) {
             LOG.warn("validation error.")
-			return "person/form"
-		}
+            return "person/form"
+        }
     
         // object mapping [form object] to [dto object] by dozer.
         val personDto: PersonDto = context.getBean(classOf[PersonDto])
@@ -134,7 +134,7 @@ class PersonController {
         // save a dto object instead of form object.
         personService.savePerson(personDto)
 
-        // add a message to redirectAttributes object, with message key.        
+        // add a message to redirectAttributes object, with message key.
         attrs.addFlashAttribute(
             "statusMessageKey",
             MESSAGE_SAVE_SUCCESS_RESOURCE_KEY
@@ -156,7 +156,7 @@ class PersonController {
         personForm: PersonForm,
         attrs: RedirectAttributes
     )
-    : String = {     
+    : String = {
         // object mapping [from object] to [dto object] by dozer.
         val personDto: PersonDto = context.getBean(classOf[PersonDto])
         mapper.map(personForm, personDto)
@@ -164,7 +164,7 @@ class PersonController {
         // delete as a entity
         personService.deletePerson(personDto)
 
-        // add a message to redirectAttributes object, with message key.        
+        // add a message to redirectAttributes object, with message key.
         attrs.addFlashAttribute(
             "statusMessageKey",
             MESSAGE_DELETE_SUCCESS_RESOURCE_KEY
@@ -183,8 +183,8 @@ class PersonController {
         method=Array(RequestMethod.GET)
     )
     @ModelAttribute("persons")
-    def search() 
-    : List[PersonForm] =  {
+    def search()
+    : List[PersonForm] = {
         
         // object mapping [dto object] to [from object] by dozer.
         val personFormList: List[PersonForm] = new ArrayList[PersonForm]()

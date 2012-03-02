@@ -7,11 +7,11 @@
     <groupId>com.hiroxpepe</groupId>
     <artifactId>exam-service-impl</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.5-SNAPSHOT</version>
     <name>exam-service-impl</name>
 
     <properties>
-        <exam.version>0.0.4-SNAPSHOT</exam.version>
+        <exam.version>0.0.5-SNAPSHOT</exam.version>
         <dozer.version>5.3.2</dozer.version>
         <spring.version>3.1.0.RELEASE</spring.version>
         <slf4j.version>1.5.10</slf4j.version>

@@ -4,11 +4,11 @@
     
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hiroxpepe</groupId>
-    <artifactId>exam-project</artifactId>
+    <artifactId>examproject</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.5-SNAPSHOT</version>
     
-    <name>exam-project</name>
+    <name>examproject</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

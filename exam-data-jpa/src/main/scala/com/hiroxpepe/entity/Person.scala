@@ -27,6 +27,7 @@ import javax.persistence.Temporal
 
 import org.springframework.stereotype.Component
 
+import scala.SerialVersionUID
 import scala.reflect.BeanProperty
 
 /**
@@ -35,9 +36,8 @@ import scala.reflect.BeanProperty
 @Entity
 @Table(name="person")
 @Component
+@SerialVersionUID(-8712872385957386182L)
 class Person extends Serializable {
-    
-    val serialVersionUID: Long = -8712872385957386182L
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)

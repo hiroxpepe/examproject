@@ -30,6 +30,7 @@ You will need to get Apache Maven.
 You will need to compile this example first.
   > cd {path to this README.txt directory!}
   > mvn compile
+  > mvn install
 
 Move to launcher project directory.
   > cd exam-launcher

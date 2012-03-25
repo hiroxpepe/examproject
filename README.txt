@@ -10,7 +10,7 @@
 -----------------------------------------------------------
 * What's this?
 
-This project shows how to work with 
+This project shows how to work with
   Spring MVC
   Spring Security
   Spring Data JPA
@@ -33,7 +33,7 @@ You will need to compile this example first.
   > mvn install
 
 Move to launcher project directory.
-  > cd exam-launcher
+  > cd exmp-webapp
 
 To run the .war application by jetty plugin.
   > mvn jetty:run
@@ -66,4 +66,4 @@ This project sample is running on Heroku.
   http://examproject.herokuapp.com/
 
 -----------------------------------------------------------
-enjoy! Spring! :)
+enjoy! Spring :)

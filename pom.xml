@@ -3,10 +3,10 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.hiroxpepe</groupId>
+    <groupId>org.examproject</groupId>
     <artifactId>examproject</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     
     <name>examproject</name>
     <properties>
@@ -14,12 +14,12 @@
     </properties>
     
     <modules>
-        <module>exam-launcher</module>
-        <module>exam-mvc</module>
-        <module>exam-service</module>
-        <module>exam-service-impl</module>
-        <module>exam-domain</module>
-        <module>exam-data-jpa</module>
+        <module>exmp-webapp</module>
+        <module>exmp-mvc</module>
+        <module>exmp-service</module>
+        <module>exmp-service-impl</module>
+        <module>exmp-domain</module>
+        <module>exmp-data-jpa</module>
     </modules>
     
     <build>

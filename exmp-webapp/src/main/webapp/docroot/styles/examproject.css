@@ -60,8 +60,8 @@ div.container {
     margin-left: auto;
     margin-right: auto;
     background-color: lavender;
-    border-left: 1px solid darkgray;
-    border-right: 1px solid darkgray;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -220,7 +220,7 @@ div.sidebar-content {
         background-color: transparent;
         border-width: 1px 0px 1px 0px;
         border-style: solid solid solid solid;
-        border-color: darkgray transparent darkgray transparent;
+        border-color: silver transparent silver transparent;
     }
 
 /* ****************************************************************************
@@ -366,13 +366,13 @@ div.search-content {
             color: white;    
             background: lightslategray;
             border-style: solid;
-            border-color: lightslategray;
+            border-color: silver;
             border-width: 1px;
         }
         table.person-search-table td {
             padding: 0.25em;
             border-style: solid;
-            border-color: lightslategray;
+            border-color: silver;
             border-width: 1px;
         }
 

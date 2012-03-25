@@ -154,7 +154,7 @@ div.block {
  */
 div.header-content {
 }
-    h1.header-title  {
+    h1.header-title {
         margin-top: 0.5em;
     }
 
@@ -214,7 +214,7 @@ div.sidebar-content {
             background: darkgray;
             border: 1px solid #d2b48c;
             border-radius: 3px;
-    }
+        }
     div.sidebar-content p {
         margin-top: 0.25em;
         background-color: transparent;
@@ -254,7 +254,7 @@ input.command-button {
     width: 90px;
     height: 25px;
     cursor: pointer;
-    color: white;    
+    color: white;
     background: lightslategray;
     border: 1px solid #aaaaaa;
     border-radius: 4px;
@@ -345,7 +345,7 @@ div.index-content {
     }
     p.index-description {
         margin-top: 1em;
-        padding: 1em 2em 2em 1em; 
+        padding: 1em 2em 2em 1em;
     }
 
 /* ****************************************************************************

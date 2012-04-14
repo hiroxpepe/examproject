@@ -7,7 +7,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="shortcut icon" href="/docroot/images/icon.ico" >
-        <link rel="stylesheet" type="text/css" href="<c:url value="/docroot/styles/examproject.css"/>" />
+        <link rel="stylesheet" type="text/css" href="<c:url value="/docroot/styles/exmp.css"/>" />
+        <script language="javascript" type="text/javascript" src="<c:url value="/docroot/scripts/exmp.min.js"/>"></script>
+        
         <title><fmt:message key="site.title"/></title>
     </head>
     <body>

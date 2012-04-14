@@ -46,7 +46,7 @@ class Person extends Serializable {
     var id: Long = _
 
     @Column(name="created")
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     @BeanProperty
     var created: Date = _
 

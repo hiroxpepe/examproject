@@ -46,13 +46,18 @@ To push the application for Heroku at your command line.
     > git push git@heroku.com:your-app-name.git
 
 ***
-### This project is hosted on GitHub.
-[examproject](https://github.com/hiroxpepe/examproject)
+### Hosted on GitHub.
+[hiroxpepe/examproject](https://github.com/hiroxpepe/examproject)
 
 ***
-### This project sample is running on Heroku.
+### Running on Heroku.
 http://examproject.herokuapp.com/
 
 ***
 ### Author
 [hiroxpepe](mailto:hiroxpepe@gmail.com)
+
+***
+### License
+The examproject is released under version 2.0 of the
+[Apache License](http://www.apache.org/licenses/LICENSE-2.0).
